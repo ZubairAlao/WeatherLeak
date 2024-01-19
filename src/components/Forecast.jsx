@@ -48,7 +48,7 @@ export default function Forecast() {
 
   return (
     <div>
-     <h1 className='text-2xl mt-8 font-semibold mb-4'>Forecast</h1>
+     <h1 className='text-2xl mt-4 font-semibold mb-4'>Forecast</h1>
      {weatherForecast ? (
      <Splide
       options={{
@@ -81,14 +81,16 @@ export default function Forecast() {
      >
      {weatherForecast.list.map((hourlyData) => (
        <SplideSlide key={hourlyData.dt} className="p-4 bg-black bg-opacity-40 rounded-md text-center space-y-4">
-         <p className='text-lg'>{new Date(hourlyData.dt_txt).toLocaleTimeString()}</p>
+         <p className='text-sm'>{new Date(hourlyData.dt_txt).toLocaleTimeString()}</p>
          <WeatherIcons weatherCode={hourlyData.weather[0].icon} iconSize="2x" />
-         <p className='text-lg'>{hourlyData.main.temp} &deg;C</p>
+         <p className='text-sm'>{hourlyData.main.temp} &deg;C</p>
        </SplideSlide>
      ))}
    </Splide>
    ): (
-   <FontAwesomeIcon className='flex items-center justify-center' icon={faSync} spin size="7x" />
+    <div class="animate-pulse flex justify-center space-x-4 mt-8">
+      <FontAwesomeIcon  icon={faSync} spin size="7x" />
+    </div>
   )}
     </div>
   );

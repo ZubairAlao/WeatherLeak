@@ -28,10 +28,10 @@ function Layout() {
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
-        height: '100vh',
+        minHeight: '100vh', 
       }}
     >
-      <div className="bg-black bg-opacity-70 p-8 h-screen">
+      <div className="bg-black bg-opacity-70 p-8 min-h-screen">
         <Header />
         <Search />
         <main>

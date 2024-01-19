@@ -5,7 +5,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSync } from '@fortawesome/free-solid-svg-icons';
 import WeatherIcons from './WeatherIcons';
 
-import { faSun, faCloudRain, faCloud, faSnowflake } from '@fortawesome/free-solid-svg-icons';
 import Forecast from './Forecast';
 
 export default function Weather() {
@@ -77,7 +76,9 @@ export default function Weather() {
           </div>
         </div>
       ) : (
-        <FontAwesomeIcon className='flex items-center justify-center' icon={faSync} spin size="7x" />
+        <div class="animate-pulse flex  justify-center space-x-4 mt-8">
+          <FontAwesomeIcon  icon={faSync} spin size="7x" />
+        </div>
       )}
 
       <Forecast />

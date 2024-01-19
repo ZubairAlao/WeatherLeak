@@ -69,7 +69,9 @@ export default function SearchedResult() {
         </div>
       </div>
       ) : (
-        <FontAwesomeIcon className='flex items-center justify-center' icon={faSync} spin size="7x" />
+        <div class="animate-pulse flex  justify-center space-x-4 mt-8">
+          <FontAwesomeIcon  icon={faSync} spin size="7x" />
+        </div>
       )}
       </div>
 
@@ -114,7 +116,9 @@ export default function SearchedResult() {
             ))}
           </Splide>
         ) : (
-          <FontAwesomeIcon className='flex items-center justify-center' icon={faSync} spin size="7x" />
+          <div class="animate-pulse flex  justify-center space-x-4 mt-8">
+          <FontAwesomeIcon  icon={faSync} spin size="7x" />
+        </div>
         )}
       </div>
     </div>
