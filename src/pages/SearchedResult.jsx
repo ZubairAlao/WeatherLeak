@@ -93,13 +93,13 @@ export default function SearchedResult() {
               pagination: "false",
               breakpoints: {
                 1024: {
-                  perPage: 7,
+                  perPage: 6,
                 },
                 767: {
                   perPage: 5,
                 },
                 640: {
-                  perPage: 4,
+                  perPage: 3,
                 },
                 370: {
                   perPage: 3,
@@ -109,9 +109,9 @@ export default function SearchedResult() {
           >
             {searchForecast.list.map((hourlyData) => (
               <SplideSlide key={hourlyData.dt} className="p-4 bg-black bg-opacity-40 rounded-md space-y-4 text-center">
-                <p className='text-lg'>{new Date(hourlyData.dt_txt).toLocaleTimeString()}</p>
+                <p className='text-sm'>{new Date(hourlyData.dt_txt).toLocaleTimeString()}</p>
                 <WeatherIcons weatherCode={hourlyData.weather[0].icon} iconSize="2x" />
-                <p className='text-lg'>{hourlyData.main.temp} &deg;C</p>
+                <p className='text-sm'>{hourlyData.main.temp} &deg;C</p>
               </SplideSlide>
             ))}
           </Splide>

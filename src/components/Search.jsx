@@ -44,7 +44,7 @@ export default function Search() {
 
 
   return (
-    <div className='flex flex-col items-center justify-center'>
+    <div className='flex flex-col items-center justify-center mt-8'>
       <form onSubmit={handleSubmit}>
         <div className='relative w-200'>
           <input
@@ -63,14 +63,14 @@ export default function Search() {
 
 
       {showLocationList && (
-        <div className='text-white flex flex-col absolute top-28'>
+        <div className='text-white flex flex-col absolute top-36'>
           {location.map((city) => (
             <Link
               to={`/searched/${city.name}`}
               state= {{ lat: city.lat, lon: city.lon}}
               key={`${city.name}-${city.state}-${city.country}`}
               onClick={handleLinkClick}
-              className='border rounded-full w-64 text-center py-2 px-4 m-1'
+              className='border rounded-full w-64 text-center py-2 px-4 m-1 bg-black bg-opacity-60'
             >
               {city.name}, {city.state}, {city.country}
             </Link>
