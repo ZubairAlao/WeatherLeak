@@ -23,7 +23,7 @@ export async function fetchWeather(lat, long) {
 
   export async function fetchCity(cityName) {
     const APIkey = '245110f1d02c69e3818953300583c800';
-    const baseUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=3&appid=${APIkey}`;
+    const baseUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=3&appid=${APIkey}`;
     // http://api.openweathermap.org/geo/1.0/direct?q=London&limit=5&appid={API key}
   
     try {
