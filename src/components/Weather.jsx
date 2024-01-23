@@ -20,7 +20,6 @@ export default function Weather() {
         const data = await fetchWeather(position.coords.latitude, position.coords.longitude);
         return data;
       } catch (error) {
-        console.error('Error fetching weather:', error);
         throw error;
       }
     },
@@ -62,7 +61,25 @@ export default function Weather() {
           <FontAwesomeIcon  icon={faSync} spin size="7x" />
         </div>
       }
-      {weatherQuery.isError && <pre>{JSON.stringify(weatherQuery.error)}</pre>}
+      {weatherQuery.isError && weatherQuery.error.code === 1 ? (
+        <div className="flex flex-col items-center mt-8">
+          <p className="text-center text-red-500 text-lg">
+            <span className="block">Geolocation Error:</span>
+            User denied Geolocation. Please enable location services and click on refresh or use the search box for your location.
+          </p>
+          <button
+              onClick={() => window.location.reload()}
+              className="bg-blue-500 hover:bg-blue-700 mt-10 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline-blue active:bg-blue-800"
+            >
+              Refresh
+            </button>
+        </div>
+      ) : weatherQuery.isError ? (
+        <div className="flex justify-center space-x-4 mt-8">
+          <p className="text-red-500 text-lg">Error: {weatherQuery.error.message}</p>
+        </div>
+      ) : null}
+
 
       <Forecast />
     </div>
