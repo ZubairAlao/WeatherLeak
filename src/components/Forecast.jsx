@@ -80,12 +80,12 @@ export default function Forecast() {
             <span className="block">Geolocation Error:</span>
             User denied Geolocation. Please enable location services and click on refresh or use the search box for your location.
           </p>
-          <button
+          {/* <button
               onClick={() => window.location.reload()}
               className="bg-blue-500 hover:bg-blue-700 mt-10 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline-blue active:bg-blue-800"
             >
               Refresh
-            </button>
+            </button> */}
         </div>
       ) : forecastQuery.isError ? (
         <div className="flex justify-center space-x-4 mt-8">
